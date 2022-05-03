@@ -1,0 +1,16 @@
+import numpy as np
+def fibinocci(n,f):
+    l=[]
+    f1=0
+    f2=1
+    l.append(f1)
+    l.append(f2)
+    for i in range(2,n):
+        f3=f2+f1
+        l.append(f3)
+        f1=f2
+        f2=f3
+    l = np.asarray(l)
+    idx = (np.abs(l - f)).argmin()
+    print(l[n-1],l[idx]) 
+fibinocci(5,4)
